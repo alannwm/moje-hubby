@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!-- (1) Deklaracja HTML5 -->
+<html lang="pl"> <!-- (2) Ustawiamy język dokumentu na polski -->
+<head>
+    <meta charset="utf-8"> <!-- (3) Kodowanie UTF-8 dla polskich znaków -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- (4) Strona responsywna -->
+    <title>Kontakt – Moje hobby</title> <!-- (5) Tytuł karty w przeglądarce -->
+    <link rel="stylesheet" href="styles.css"> <!-- (6) Używamy tego samego CSS -->
+</head>
+
+<body>
+    <!-- ======= Nagłówek ======= -->
+    <header class="site-header">
+        <h1 class="site-title">Kontakt</h1>
+        <p class="intro">Jeśli chcesz się ze mną skontaktować – poniżej znajdziesz moje dane.</p>
+    </header>
+
+    <!-- ======= Główna zawartość ======= -->
+    <main class="content">
+        <!-- Sekcja danych kontaktowych -->
+        <section class="centered-block">
+            <h2 class="centered-title">Moje dane kontaktowe</h2>
+            <p class="centered-text">
+                📧 E-mail: <strong>alan.s.prog@wp.pl</strong><br>
+                📱 Numer telefonu: <strong>473&nbsp;827&nbsp;222</strong>
+            </p>
+        </section>
+
+        <!-- Sekcja formularza kontaktowego -->
+        <section class="centered-block">
+            <h2 class="centered-title">Zostaw swój kontakt</h2>
+            <p class="centered-intro">Jeśli chcesz, możesz wpisać swój adres e-mail – odezwę się do Ciebie w razie potrzeby.</p>
+
+            <form class="centered-form">
+                <label for="email" class="centered-text">Twój e-mail:</label><br>
+                <input type="email" id="email" name="email" placeholder="Wpisz swój e-mail" required><br>
+                <button type="submit">Wyślij</button>
+            </form>
+        </section>
+
+        <!-- Sekcja powrotu -->
+        <section class="centered-block">
+            <a href="hobby.html" class="back-link">← Powrót do strony głównej</a>
+        </section>
+    </main>
+
+    <!-- ======= Stopka ======= -->
+    <footer class="site-footer">
+        <p>Autor: Alan Szałaj — 2025</p>
+    </footer>
+</body>
+</html>
