@@ -1,0 +1,125 @@
+<!DOCTYPE html> <!-- (1) Informacja dla przeglądarki: dokument jest w formacie HTML5. -->
+<html lang="pl"> <!-- (2) Otwiera dokument HTML; lang="pl" oznacza, że treść jest po polsku. -->
+
+<head> <!-- (3) Sekcja z metadanymi strony (nie jest bezpośrednio widoczna na stronie). -->
+    <link rel="icon" href="favicon.ico/favicons/favicon-16x16.png" type="image/x-icon">
+    <meta charset="utf-8"> <!-- (4) Ustawia kodowanie znaków na UTF-8 — potrzebne do poprawnego wyświetlania polskich znaków. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- (5) Ustawia skalowanie strony na urządzeniach mobilnych — umożliwia responsywność. -->
+    <title>Moje hobby — oglądanie seriali i granie</title> <!-- (6) Tytuł strony widoczny na karcie przeglądarki. -->
+    <link rel="stylesheet" href="styles.css"> <!-- (7) Łączy zewnętrzny plik CSS (styles.css) zawierający reguły wyglądu. -->
+</head> <!-- (8) Koniec sekcji head. -->
+
+<body> <!-- (9) Początek treści widocznej dla użytkownika. -->
+
+    <!-- Sekcja wyśrodkowanego bloku z opisem hobby -->
+<section id="centered-block" class="centered-block">
+    <h1 class="centered-title">Moje hobby: oglądanie seriali i granie w gry</h1>
+    <!-- Nagłówek główny; będzie wyśrodkowany dzięki klasie .centered-block -->
+
+    <p class="centered-intro">
+        Uwielbiam zanurzać się w opowieściach — seriale i filmy dają mi historie, a gry pozwalają aktywnie w nie wejść.
+    </p>
+    <!-- Krótki opis; klasa .centered-intro daje odstęp i opcjonalne formatowanie. -->
+
+    <h2 class="centered-subtitle">O moim hobby</h2>
+    <!-- Podtytuł sekcji, również wyśrodkowany. -->
+
+    <p class="centered-text">
+        Interesuję się serialami i grami, które mają ciekawą fabułę, dobrze napisane postacie i wciągającą atmosferę.
+        Lubię dzielić się tytułami z przyjaciółmi oraz odkrywać nowe produkcje.
+    </p>
+    <!-- Paragraf opisowy; będzie wyśrodkowany. -->
+
+    <h2 class="centered-subtitle">Co jest dla mnie ważne</h2>
+    <!-- Nagłówek listy; wyśrodkowany. -->
+
+    <!-- Lista ustawiona jako element wewnątrz bloku wyśrodkowanego.
+         UWAGA: element <ul> ustawimy jako inline-block, żeby punktory były poprawnie wyrównane,
+         ale cały blok listy będzie wycentrowany względem strony. -->
+    <ul class="centered-list">
+        <li>Dobra fabuła i rozwój postaci.</li>
+        <li>Atmosfera i ścieżka dźwiękowa.</li>
+        <li>Estetyka: zdjęcia, grafika i montaż.</li>
+        <li>Możliwość dyskusji i polecania innym.</li>
+    </ul>
+</section>
+        <!-- Sekcja: Galeria zdjęć -->
+        <section id="gallery1"> <!-- (28) Sekcja galerii z id 'gallery1'. -->
+            <h2 class="centered-title">Zdjęcia (placeholdery)</h2> <!-- (29) Nagłówek galerii; klasa centered-title pozwoli wyśrodkować i ostylować napis. -->
+
+            <div class="gallery1"> <!-- (30) Kontener galerii; w CSS możemy tu ustawić flexbox, odstępy, zawijanie obrazków itp. -->
+
+                <!-- Pierwsze zdjęcie: używamy figure/figcaption dla semantyki i podpisu -->
+                <figure class="photo2"> <!-- (31) Figure grupuje obraz i podpis; klasa photo2 do stylowania pojedynczego elementu galerii. -->
+                    <img src="shamlles-niepokorni.jpg" alt="Kadr z serialu"> <!-- (32) img ładuje obraz; src to nazwa pliku obrazu; alt = tekst alternatywny (ważne dla dostępności). -->
+                    <figcaption>Kadr z serialu / plakat.</figcaption> <!-- (33) Opis obrazka — pokazuje się pod zdjęciem i czytają go czytniki ekranu. -->
+                </figure> <!-- (34) Koniec pierwszego figure. -->
+
+                <!-- Drugie zdjęcie -->
+                <figure class="photo2"> <!-- (35) Drugi element galerii. -->
+                    <img src="scream6.jpg" alt="Kadr z filmu"> <!-- (36) Wstaw tu swój plik obrazu; lepiej bez spacji w nazwie pliku. -->
+                    <figcaption>Kadr z filmu.</figcaption> <!-- (37) Podpis do drugiego zdjęcia. -->
+                </figure> <!-- (38) Koniec drugiego figure. -->
+
+                <!-- Trzecie zdjęcie -->
+                <figure class="photo2"> <!-- (39) Trzeci element galerii. -->
+                    <img src="fortnite.jpg" alt="Kadr z gry"> <!-- (40) Obraz gry. -->
+                    <figcaption>Kadr z gry.</figcaption> <!-- (41) Podpis do trzeciego zdjęcia. -->
+                </figure> <!-- (42) Koniec trzeciego figure. -->
+
+            </div> <!-- (43) Koniec kontenera gallery1. -->
+        </section> <!-- (44) Koniec sekcji gallery1. -->
+
+        <!-- Sekcja: Tabela / ranking -->
+        <section id="table"> <!-- (45) Sekcja z tabelą; id 'table' ułatwia nawigację. -->
+            <h2>Krótki ranking (przykład)</h2> <!-- (46) Nagłówek sekcji tabeli. -->
+            <table class="ranking-table"> <!-- (47) Tabela z klasą ranking-table (możemy tu ustawić inną czcionkę i styl). -->
+                <thead> <!-- (48) Nagłówek tabeli — nazwy kolumn. -->
+                    <tr> <!-- (49) Wiersz nagłówka. -->
+                        <th>Pozycja</th> <!-- (50) Th = komórka nagłówkowa (ważniejsza wizualnie). -->
+                        <th>Tytuł</th> <!-- (51) Nazwa kolumny: Tytuł. -->
+                        <th>Typ</th> <!-- (52) Typ: serial/film/gra. -->
+                        <th>Uwagi</th> <!-- (53) Dodatkowe informacje. -->
+                    </tr> <!-- (54) Koniec wiersza nagłówkowego. -->
+                </thead> <!-- (55) Koniec thead. -->
+                <tbody> <!-- (56) Ciało tabeli z danymi (wiersze z zawartością). -->
+                    <tr> <!-- (57) Pierwszy wiersz danych. -->
+                        <td>1</td> <!-- (58) td = zwykła komórka tabeli (tutaj pozycja). -->
+                        <td>Shamless niepokorni</td> <!-- (59) Tytuł pierwszej pozycji. -->
+                        <td>Serial</td> <!-- (60) Typ pierwszej pozycji. -->
+                        <td>Wciągająca fabuła</td> <!-- (61) Uwagi do pierwszej pozycji. -->
+                    </tr> <!-- (62) Koniec wiersza 1. -->
+                    <tr> <!-- (63) Wiersz 2. -->
+                        <td>2</td>
+                        <td>Fortnite</td>
+                        <td>Gra</td>
+                        <td>Świetny świat i mechanika</td>
+                    </tr> <!-- (64) Koniec wiersza 2. -->
+                    <tr> <!-- (65) Wiersz 3. -->
+                        <td>3</td>
+                        <td>Scream VI</td>
+                        <td>Film</td>
+                        <td>Ciekawy horror</td>
+                    </tr> <!-- (66) Koniec wiersza 3. -->
+                </tbody> <!-- (67) Koniec ciała tabeli. -->
+            </table> <!-- (68) Koniec tabeli. -->
+        </section> <!-- (69) Koniec sekcji table. -->
+<section class="centered-block">
+    <a href="kontakt.html" class="back-link">📩 Skontaktuj się ze mną</a>
+</section>
+
+    </main> <!-- (70) Koniec głównej zawartości. -->
+
+    <!-- Stopka -->
+    <footer class="site-footer"> <!-- (71) Stopka strony; klasa site-footer do stylowania. -->
+        <p>Autor: Alan Szałaj — 2025</p> <!-- (72) Podpis i rok — możesz tu zmienić imię. -->
+    </footer> <!-- (73) Koniec stopki. -->
+<!-- >>> PRZYCISK DO STRONY KONTAKTOWEJ (WSTAW NA SAM KONIEC, PRZED </body>) >>> -->
+<div class="contact-cta-wrapper"> <!-- kontener, trzyma przycisk na środku i daje odstęp -->
+  <a href="kontakt.html" class="contact-cta" aria-label="Przejdź do strony kontaktowej"> <!-- link jako przycisk; href do pliku kontakt.html -->
+    Kontakt — napisz do mnie <!-- tekst przycisku widoczny dla użytkownika -->
+  </a>
+</div>
+<!-- >>> KONIEC PRZYCISKU DO STRONY KONTAKTOWEJ >>> -->
+</body> <!-- (74) Koniec body (wszystko co widoczne jest przed tą linią). -->
+</html> <!-- (75) Koniec dokumentu HTML. -->

@@ -1,0 +1,315 @@
+/* ---------- 1) Reset box-sizing dla wszystkich elementów ---------- */
+* {
+    box-sizing: border-box; /* (1) Ustawia model pudełkowy: padding i border są wliczane do szerokości elementu. Dzięki temu łatwiej liczyć rozmiary elementów. */
+}
+
+/* ---------- 2) Styl dla całej strony (body) ---------- */
+body {
+    margin: 0; /* (2) Usuwa domyślne marginesy przeglądarki wokół strony. */
+    font-family: "Helvetica Neue", Arial, sans-serif; /* (3) Ustala domyślną czcionkę dla całej strony. Jeśli "Helvetica Neue" nie ma, użyje Arial, potem dowolnej sans-serif. */
+    background: linear-gradient(180deg, #071023 0%, #0f2a43 100%); /* (4) Ustawia subtelny gradient tła (ciemne odcienie niebieskiego/granat). */
+    color: #e8f3ff; /* (5) Domyślny kolor tekstu na stronie — jasny niebieskawy dla kontrastu z ciemnym tłem. */
+    line-height: 1.5; /* (6) Wysokość linii; zwiększa czytelność tekstu. */
+    padding: 24px; /* (7) Ogólny odstęp od krawędzi okna — sprawia, że tekst nie przylega do krawędzi. */
+}
+
+/* ---------- 3) Nagłówek strony (site-header) ---------- */
+.site-header {
+    text-align: center; /* (8) Wyśrodkowuje zawartość nagłówka (tytuł, wprowadzenie). */
+    margin-bottom: 28px; /* (9) Odstęp poniżej nagłówka, oddziela go od reszty treści. */
+}
+
+/* ---------- 4) Główny tytuł strony (site-title) ---------- */
+.site-title {
+    font-size: 2.4rem; /* (10) Duży rozmiar czcionki dla głównego tytułu; rem odnosi się do rozmiaru root (zazwyczaj 16px). */
+    margin: 0 0 8px 0; /* (11) Usuń margines górny, ustaw 8px marginesu dolnego — zmniejsza przestrzeń nad/pod tytułem. */
+    color: #ffd166; /* (12) Kolor tytułu: ciepły złoto-żółty — wyróżnia się na tle. */
+    letter-spacing: 0.5px; /* (13) Delikatne rozciągnięcie liter dla estetyki. */
+}
+
+/* ---------- 5) Wprowadzenie / lead (intro) ---------- */
+.intro {
+    max-width: 880px; /* (14) Maksymalna szerokość tekstu wprowadzającego; dzięki temu linie nie będą za długie. */
+    margin: 0 auto; /* (15) Centruje akapit w poziomie (auto marginesy z lewej i prawej). */
+    color: #dbeeff; /* (16) Delikatniejszy odcień tekstu dla wprowadzenia. */
+}
+
+/* ---------- 6) Główny kontener treści (content) ---------- */
+.content {
+    max-width: 1100px; /* (17) Ogranicza szerokość treści dla lepszej czytelności na dużych ekranach. */
+    margin: 0 auto; /* (18) Centruje kontener poziomo na stronie. */
+    background: rgba(255,255,255,0.02); /* (19) Bardzo subtelne, lekko jasniejsze tło dla kontenera (przezroczyste). */
+    padding: 22px; /* (20) Wewnętrzny odstęp kontenera, żeby tekst nie przylegał do krawędzi. */
+    border-radius: 12px; /* (21) Zaokrągla rogi kontenera dla estetycznego wyglądu. */
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6); /* (22) Cień pod kontenerem, daje efekt „unoszenia” nad tłem. */
+}
+
+/* ---------- 7) Nagłówki sekcji (h2) ---------- */
+h2 {
+    color: #89c2ff; /* (23) Kolor wszystkich h2: jasnoniebieski. */
+    margin-top: 0; /* (24) Usuwa domyślny margines górny h2, dzięki czemu sekcje są bardziej zwarte. */
+}
+
+/* ---------- 8) Lista wartości (ul) ---------- */
+ul {
+    padding-left: 20px; /* (25) Wcięcie od lewej dla listy punktowanej, by punkty nie przylegały do krawędzi. */
+}
+
+/* ---------- 9) Galeria: kontener i elementy ---------- */
+.gallery1 {
+    display: flex; /* (26) Ustawia układ w rzędzie przy użyciu Flexbox — łatwa kontrola rozmieszczenia. */
+    gap: 18px; /* (27) Odstęp (gap) między elementami galerii. */
+    flex-wrap: wrap; /* (28) Pozwala elementom zawijać się do następnego wiersza przy mniejszych ekranach. */
+    justify-content: center; /* (29) Centruje zawartość galerii w kontenerze. */
+    margin-top: 8px; /* (30) Niewielki odstęp nad galerią. */
+}
+
+.photo2 {
+    width: calc(33.333% - 12px); /* (31) Każda miniatura zajmuje około 1/3 szerokości minus odstęp; obliczenie uwzględnia gap. */
+    min-width: 200px; /* (32) Minimalna szerokość elementu — zapobiega zbyt małym miniaturom na małych ekranach. */
+}
+
+/* ---------- 10) Styl obrazków w galerii ---------- */
+.photo2 img {
+    width: 100%; /* (33) Obraz dostosowuje się do szerokości kontenera .photo2. */
+    height: auto; /* (34) Zachowuje proporcje obrazu (nie rozciąga go). */
+    display: block; /* (35) Usuwa mały odstęp dolny, który mają obrazki domyślnie jako inline. */
+    border-radius: 8px; /* (36) Zaokrąglenie rogów miniatury. */
+    border: 2px solid rgba(255,255,255,0.04); /* (37) Subtelna, jasna ramka wokół obrazka w stanie normalnym. */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.55); /* (38) Delikatny cień pod obrazkiem. */
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; /* (39) Płynne przejście efektów (transform, cień, kolor ramki) przy hover. */
+}
+
+/* ---------- 11) Hover na obrazku: czerwona ramka i cień ---------- */
+.photo2 img:hover {
+    transform: translateY(-6px) scale(1.03); /* (40) Lekko podnosi i powiększa obrazek, daje wrażenie interakcji. */
+    border-color: #ff3333; /* (41) Kolor ramki zmienia się na czerwony podczas hover. */
+    box-shadow: 0 18px 48px rgba(255, 0, 0, 0.45); /* (42) Czerwony cień daje efekt mocniejszego podświetlenia. */
+    cursor: pointer; /* (43) Kursor zmienia się na wskazujący — informuje, że element jest interaktywny. */
+}
+
+/* ---------- 12) Tabela: ogólne ustawienia ---------- */
+table {
+    width: 100%; /* (44) Tabela zajmuje całą szerokość dostępnego kontenera. */
+    border-collapse: collapse; /* (45) Usuwa przerwy między obramowaniami komórek (ładniejszy efekt). */
+    margin-top: 10px; /* (46) Odstęp nad tabelą. */
+    background: rgba(255,255,255,0.01); /* (47) Bardzo subtelne tło dla tabeli, aby odróżnić ją od kontenera. */
+}
+
+/* Komórki tabeli (nagłówki i zwykłe komórki) */
+th, td {
+    padding: 10px 12px; /* (48) Wewnętrzny odstęp w komórce; poprawia czytelność. */
+    border-bottom: 1px solid rgba(255,255,255,0.03); /* (49) Subtelna linia oddzielająca wiersze. */
+    text-align: left; /* (50) Wyrównanie tekstu w komórkach do lewej. */
+}
+
+/* Nagłówki tabeli: domyślny wygląd */
+th {
+    font-weight: 600; /* (51) Pogrubienie nagłówków, by były bardziej widoczne. */
+    background: rgba(137,194,255,0.04); /* (52) Subtelne tło pod nagłówkami kolumn. */
+}
+
+/* ---------- 13) Stopka ---------- */
+.site-footer {
+    text-align: center; /* (53) Wyśrodkowanie treści stopki. */
+    margin-top: 22px; /* (54) Odstęp nad stopką. */
+    color: #b5d9ff; /* (55) Kolor tekstu stopki (stonowany jasnoniebieski). */
+}
+
+/* ---------- 14) Responsywność: reguły dla mniejszych ekranów ---------- */
+@media (max-width: 800px) {
+    .site-title { font-size: 1.8rem; } /* (56) Mniejszy tytuł na średnich ekranach (np. tablet). */
+    .photo2 { width: calc(50% - 9px); } /* (57) Dwie kolumny miniatur zamiast trzech na mniejszych ekranach. */
+}
+
+@media (max-width: 480px) {
+    body { padding: 14px; } /* (58) Mniejszy padding na wąskich ekranach (telefony). */
+    .photo2 { width: 100%; } /* (59) Jedna kolumna miniatur na najwęższych ekranach. */
+    .content { padding: 14px; } /* (60) Mniej paddingu wewnątrz kontenera content na telefonach. */
+}
+
+/* ---------- 15) Nowe style: wyśrodkowany nagłówek galerii i inna czcionka tabeli ---------- */
+
+/* Wyśrodkowany tytuł galerii (klasa przypisana do h2) */
+.centered-title {
+    text-align: center; /* (61) Wyrównuje nagłówek galerii do środka. */
+    color: #ffd166; /* (62) Złoty/żółty kolor nagłówka galerii — spójny z głównym tytułem. */
+    font-size: 1.9rem; /* (63) Większy rozmiar niż standardowe h2, by wyróżnić nagłówek galerii. */
+    margin-bottom: 18px; /* (64) Odstęp poniżej nagłówka, oddziela go od miniatur. */
+}
+
+/* Inna, wyraźna czcionka dla całej tabeli rankingowej — łatwo zauważalna */
+.ranking-table {
+    font-family: Georgia, "Times New Roman", serif; /* (65) Ustawia czcionkę szeryfową (wyraźna, klasyczna) dla tabeli. */
+    font-size: 1.05rem; /* (66) Nieco większy rozmiar czcionki w tabeli, lepsza czytelność. */
+    font-weight: 600; /* (67) Pogrubienie tekstu w tabeli, by był bardziej widoczny. */
+    color: #ffffff; /* (68) Kolor tekstu w tabeli (biały), mocny kontrast na ciemnym tle. */
+    letter-spacing: 0.2px; /* (69) Lekko rozsunięte litery dla czytelności. */
+}
+
+/* Dodatkowe stylowanie nagłówków tabeli rankingowej (overrides dla .ranking-table th) */
+.ranking-table th {
+    background-color: rgba(255, 0, 0, 0.18); /* (70) Subtelne czerwone tło nagłówków (wiąże się z czerwonym efektem hover zdjęć). */
+    color: #ffd166; /* (71) Złoty kolor tekstu w nagłówkach tabeli. */
+    text-transform: uppercase; /* (72) Zamienia tekst w nagłówkach na wielkie litery. */
+    font-size: 0.95rem; /* (73) Nieco mniejszy rozmiar nagłówków niż zawartości, żeby wyglądały schludnie. */
+}
+
+/* Podświetlenie wiersza tabeli po najechaniu myszką */
+.ranking-table tr:hover {
+    background-color: rgba(255, 0, 0, 0.12); /* (74) Delikatne czerwone podświetlenie wiersza przy hover (ułatwia czytanie). */
+    transition: background-color 0.25s ease; /* (75) Płynne przejście koloru tła podczas hover. */
+}
+/* ===== Wyśrodkowany blok — kontener ===== */
+.centered-block {
+    text-align: center;               /* (1) Wyśrodkowuje tekst wewnątrz bloku (nagłówki, akapity). */
+    max-width: 900px;                 /* (2) Ogranicza szerokość bloku, żeby linie nie były za długie. */
+    margin: 0 auto 30px auto;         /* (3) Centruje kontener na stronie (auto marginesy po bokach) i dodaje odstęp poniżej. */
+    padding: 18px 16px;               /* (4) Wewnętrzne odstępy od krawędzi kontenera. */
+    background: rgba(255,255,255,0.01);/* (5) Subtelne tło dla separacji od reszty strony (opcjonalne). */
+    border-radius: 10px;              /* (6) Zaokrąglone rogi, wygląda estetyczniej. */
+}
+
+/* ===== Wygląd głównego tytułu w środku ===== */
+.centered-title {
+    font-size: 2.1rem;                /* (7) Rozmiar nagłówka; łatwo zmienić, jeśli chcesz większy. */
+    margin: 6px 0 12px 0;             /* (8) Mały odstęp nad i pod tytułem. */
+    color: #ffd166;                   /* (9) Kolor tytułu (złoto-żółty), pasuje do reszty stylu strony. */
+}
+
+/* ===== Wprowadzenie (intro) ===== */
+.centered-intro {
+    margin: 0 auto 14px auto;         /* (10) Odstęp pod akapitem; auto marginesy centrowania są zbędne, ale pozostawione dla spójności. */
+    max-width: 780px;                 /* (11) Ogranicza szerokość akapitu dla lepszej czytelności. */
+    font-size: 1.03rem;               /* (12) Nieco większy rozmiar tekstu dla wprowadzenia. */
+    color: #dbeeff;                   /* (13) Delikatniejszy odcień tekstu niż główny kolor. */
+}
+
+/* ===== Podtytuły sekcji w bloku ===== */
+.centered-subtitle {
+    margin-top: 20px;                 /* (14) Odstęp nad podtytułem, żeby oddzielić sekcje. */
+    margin-bottom: 8px;               /* (15) Odstęp pod podtytułem. */
+    color: #89c2ff;                   /* (16) Kolor podtytułu (jasnoniebieski). */
+}
+
+/* ===== Paragraf opisowy w bloku ===== */
+.centered-text {
+    max-width: 760px;                 /* (17) Ograniczenie szerokości paragrafu dla czytelności. */
+    margin: 0 auto;                   /* (18) Wycentrowanie paragrafu w kontenerze. */
+    line-height: 1.6;                 /* (19) Więcej przestrzeni między liniami dla lepszej czytelności. */
+}
+
+/* ===== Lista wyśrodkowana, ale punkty wyrównane do lewej (czytelniej) ===== */
+.centered-list {
+    list-style-position: inside;      /* (20) Sprawia, że kropki/numery są wewnątrz bloku listy (estetyka). */
+    display: inline-block;            /* (21) Dzięki inline-block całkowita lista jest wyśrodkowana w kontenerze .centered-block. */
+    text-align: left;                 /* (22) Ale tekst listy (punktory) pozostawiamy wyrównany do lewej dla czytelności. */
+    padding-left: 18px;               /* (23) Dodatkowe wcięcie dla kropek (opcjonalne). */
+    margin: 12px 0 0 0;               /* (24) Mały odstęp nad listą, bez marginesu bocznego. */
+}
+
+/* ===== Responsywność: na małych ekranach lista staje się pełna szerokość ===== */
+@media (max-width: 480px) {
+    .centered-block {
+        padding: 12px;                /* (25) Mniejszy padding na telefonach. */
+    }
+    .centered-list {
+        display: block;               /* (26) Lista zajmuje całą szerokość kontenera na telefonach (lepsze przewijanie). */
+        text-align: left;             /* (27) Zachowujemy lewostronne wyrównanie punktów. */
+    }
+}
+/* ===== PRZYCISK CTA: kontakt (wklej na koniec styles.css) ===== */
+.contact-cta-wrapper {
+    text-align: center;           /* centruje przycisk poziomo */
+    margin: 30px 0 24px 0;        /* odstęp: góra (30px) i dół (24px) */
+}
+
+/* wygląd samego linku, który wygląda jak przycisk */
+.contact-cta {
+    display: inline-block;        /* inline-block pozwala ustawić padding i zachować centrowanie */
+    background: linear-gradient(90deg, #ff4d4d 0%, #ff1a1a 100%); /* czerwony gradient przycisku */
+    color: #ffffff;               /* kolor tekstu: biały */
+    text-decoration: none;        /* usuwa domyślne podkreślenie linku */
+    padding: 12px 22px;           /* wewnętrzny odstęp: góra/dół 12px, lewo/prawo 22px */
+    border-radius: 8px;           /* zaokrąglone rogi przycisku */
+    font-weight: 600;             /* pogrubienie tekstu przycisku */
+    box-shadow: 0 8px 20px rgba(255, 26, 26, 0.25); /* delikatny cień w kolorze przycisku */
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease; /* płynne przejścia efektów */
+    font-size: 1rem;              /* czytelny rozmiar tekstu */
+}
+
+/* efekt po najechaniu kursorem */
+.contact-cta:hover,
+.contact-cta:focus {
+    transform: translateY(-4px) scale(1.02); /* lekkie uniesienie i powiększenie */
+    box-shadow: 0 18px 40px rgba(255, 26, 26, 0.30); /* silniejszy cień */
+    outline: none;                /* usuwa domyślny focus outline (poniżej dodajemy dostępny focus) */
+    opacity: 0.98;                /* lekko zmniejszona przezroczystość dla miękkiego efektu */
+}
+
+/* dostępny widoczny focus (dla klawiatury - ważne dla osób używających TAB) */
+.contact-cta:focus-visible {
+    box-shadow: 0 0 0 4px rgba(255, 26, 26, 0.18), 0 18px 40px rgba(255,26,26,0.30); /* widoczna obręcz focus */
+    border-radius: 10px;
+}
+
+/* responsywność: mniejszy przycisk na bardzo wąskich ekranach */
+@media (max-width: 480px) {
+    .contact-cta {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+}
+/* ===== Formularz kontaktowy ===== */
+.centered-form {
+    text-align: center;          /* (1) Cały formularz wyśrodkowany */
+    margin-top: 14px;            /* (2) Odstęp nad formularzem */
+}
+
+.centered-form input[type="email"] {
+    padding: 10px 12px;          /* (3) Wewnętrzne odstępy (wygodne pisanie) */
+    border: 1px solid rgba(255,255,255,0.2); /* (4) Jasna ramka */
+    border-radius: 6px;          /* (5) Zaokrąglenie rogów */
+    background: rgba(255,255,255,0.05); /* (6) Subtelne tło */
+    color: #fff;                 /* (7) Kolor tekstu */
+    width: 260px;                /* (8) Stała szerokość pola */
+    font-size: 1rem;             /* (9) Normalny rozmiar czcionki */
+    outline: none;               /* (10) Usuwa domyślną niebieską ramkę po kliknięciu */
+}
+
+.centered-form input[type="email"]:focus {
+    border-color: #ffd166;       /* (11) Złota ramka po kliknięciu w pole */
+    background: rgba(255,255,255,0.1); /* (12) Jaśniejsze tło przy aktywacji */
+}
+
+/* ===== Przycisk wysyłania ===== */
+.centered-form button {
+    margin-top: 10px;            /* (13) Odstęp nad przyciskiem */
+    padding: 10px 18px;          /* (14) Wygodne wymiary przycisku */
+    border: none;                /* (15) Bez ramki */
+    border-radius: 6px;          /* (16) Zaokrąglenie rogów */
+    background-color: #ff3333;   /* (17) Czerwony kolor przycisku (pasuje do hover zdjęć) */
+    color: white;                /* (18) Biały tekst */
+    font-weight: 600;            /* (19) Pogrubiony tekst */
+    cursor: pointer;             /* (20) Wskaźnik ręki przy najechaniu */
+    transition: background 0.25s ease, transform 0.2s ease; /* (21) Płynne przejścia */
+}
+
+.centered-form button:hover {
+    background-color: #ff5050;   /* (22) Jaśniejszy czerwony po najechaniu */
+    transform: scale(1.05);      /* (23) Delikatne powiększenie efektu hover */
+}
+
+/* ===== Link powrotu ===== */
+.back-link {
+    display: inline-block;       /* (24) Dzięki temu możemy dodać padding i efekty hover */
+    text-decoration: none;       /* (25) Usuwa podkreślenie */
+    color: #ffd166;              /* (26) Złoty kolor tekstu */
+    font-weight: 600;            /* (27) Pogrubienie */
+    margin-top: 10px;            /* (28) Odstęp nad linkiem */
+    transition: color 0.25s ease;/* (29) Płynna zmiana koloru */
+}
+
+.back-link:hover {
+    color: #ff5050;              /* (30) Zmiana koloru na czerwony po najechaniu */
+}
